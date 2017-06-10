@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 //import * as csv from "fast-csv" ;
 var csv = require("fast-csv");
-//var filePath: string = "../sample_csv_empty.csv";
 exports.readCSVFromFile = (filePath, callback) => {
     var array = [];
     var arrayCounter = 0;

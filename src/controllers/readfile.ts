@@ -1,9 +1,6 @@
 //import * as csv from "fast-csv" ;
 var csv = require("fast-csv");
 
-//var filePath: string = "../sample_csv_empty.csv";
-
-
 export var readCSVFromFile = (filePath: string, callback: any)=> {
     var array: Array<string> = [];
     var arrayCounter: number = 0;

@@ -24,9 +24,10 @@ app.post('/upload/getdata',upload.single('csvfile'), function (req:any, res: any
 
   readFile.getData(`./uploads/${csvFileName}`,(error: string, result: Array<string>) => {
     if (error){
-      console.log(error);
+      //console.log(error);
+      res.send(error).end;
     }else{
-      console.log(result);
+      //console.log(result);
       res.send(result).end();
     }
   });
@@ -39,9 +40,10 @@ app.post('/upload/getheader',upload.single('csvfile'), function (req:any, res: a
 
   readFile.getHeader(`./uploads/${csvFileName}`, (error: string, result: Array<string>) => {
     if (error){
-      console.log(error);
+      //console.log(error);
+      res.send(error).end;
     }else{
-      console.log(result);
+      //console.log(result);
       res.send(result).end();
     }
   });
@@ -72,7 +74,7 @@ app.post('/upload/savecsvbyarraypbject',upload.single('csvfile'), function (req:
       }else{
         csvModel.insertCSVListByArrayObject(req.body.database, req.body.collection, result, (error: any, result: any) => {
           if(error){
-            console.log(error);
+            //console.log(error);
             res.send(error).end();
           }else{
             result.result.insertedTo = {
